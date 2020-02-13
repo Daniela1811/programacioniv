@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", e=>{
     document.querySelector("#frmAlumnos").addEventListener("submit", event=>{
         event.preventDefault();
-        
+
+
         let codigo = document.querySelector("#txtCodigoAlumno").value,
             nombre = document.querySelector("#txtNombreAlumno").value,
             direccion = document.querySelector("#txtDireccionAlumno").value,
