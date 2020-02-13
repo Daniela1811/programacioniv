@@ -26,12 +26,3 @@ document.addEventListener("DOMContentLoaded", e=>{
         document.querySelector("#txtTelefonoAlumno").value = window.localStorage.getItem("telefono");
     });
 });
-
-/*document.addEventListener("DOMContentLoaded",function(e){
-    alert("CALLBACK LISTO");
-});*/
-
-/*document.addEventListener("DOMContentLoaded", init);
-function init(e){
-    alert("LISTO");
-}*/
