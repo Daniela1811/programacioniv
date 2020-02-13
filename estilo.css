@@ -2,7 +2,7 @@ h1{
     text-align: center;
     color: blanchedalmond;
     text-decoration-style: wavy;
-    margin-top: 25px;
+    margin-top: 100px;
     
     }
     div{
@@ -10,7 +10,7 @@ h1{
         margin-top: 10px;
     }
     body{
-        background-image: url("fondo4.jpg");/*imagen de fondo*/
+        background-image: url("fondo4.png");/*imagen de fondo*/
     }
     body{
         font-size: 14px;
