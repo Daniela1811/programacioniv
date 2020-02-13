@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", e=>{
             window.localStorage.setItem("direccion", direccion);
             window.localStorage.setItem("telefono", telefono);
         } else {
-            alert("Por Favor Actualizate");
+            alert("Por favor ACTUALIZATE!!!.");
         }
     });
     document.querySelector("#btnRecuperarAlumno").addEventListener("click", event=>{
@@ -25,19 +25,12 @@ document.addEventListener("DOMContentLoaded", e=>{
         document.querySelector("#txtTelefonoAlumno").value = window.localStorage.getItem("telefono");
     });
 });
-document.querySelector("guardar").addEventListener("click", event=>{
-    document.querySelector("#txtCodigoAlumno").value = window.localStorage.getItem("codigo");
-    document.querySelector("#txtNombreAlumno").value = window.localStorage.getItem("nombre");
-    document.querySelector("#txtDireccionAlumno").value = window.localStorage.getItem("direccion");
-    document.querySelector("#txtTelefonoAlumno").value = window.localStorage.getItem("telefono");
-});
 
 /*document.addEventListener("DOMContentLoaded",function(e){
     alert("CALLBACK LISTO");
 });*/
 
 /*document.addEventListener("DOMContentLoaded", init);
-
 function init(e){
     alert("LISTO");
 }*/
