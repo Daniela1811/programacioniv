@@ -1,6 +1,12 @@
+div{
+
+    margin-left: 50px;
+
+}
+
 
 body{
-    background-image: url("fondow.jpg");
+    background-image: url("fondo4.png");
 
 }
 
@@ -21,7 +27,7 @@ input{
 input[type=submit],
 input[type=button],
 input[type=file]{
-    background-color: rgb(61, 49, 235);
+    background-color: rgba(182, 107, 163, 0.781);
     color: #FFF;
     text-transform: uppercase;
     font-weight: bolder;
@@ -34,7 +40,6 @@ input[type=file]:hover{
     background-color: #FFF;
 }
 input[type=text]:invalid,
-input[type=date]:invalid,
 input[type=file]:invalid,
 input[type=url]:invalid,
 input[type=tel]:invalid{
@@ -42,7 +47,6 @@ input[type=tel]:invalid{
     color: black;
 }
 input[type=text]:valid, /* Estilo para los input de tipo text, date y file */
-input[type=date]:valid, /* Cuando es valido su contenido */
 input[type=file]:valid,
 input[type=url]:valid,
 input[type=tel]:valid{
