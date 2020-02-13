@@ -44,15 +44,13 @@ h1{
         background-color: rgb(230, 81, 223);
     }
     input[type=text]:invalid,
-    input[type=date]:invalid,
     input[type=file]:invalid,
     input[type=url]:invalid,
     input[type=tel]:invalid{
         background-color: rgb(110, 199, 235);
         color: rgb(245, 236, 236);
     }
-    input[type=text]:valid, /* Estilo para los input de tipo text, date y file */
-    input[type=date]:valid, /* Cuando es valido su contenido */
+    input[type=text]:valid, /* Estilo para los input de tipo text y file */
     input[type=file]:valid,
     input[type=url]:valid,
     input[type=tel]:valid{
