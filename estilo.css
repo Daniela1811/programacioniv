@@ -20,12 +20,12 @@ h1{
     
     }
     body > h1{
-        background-color: rgb(146, 218, 65) ;
+        background-color: rgb(114, 166, 179) ;
         margin: 10px;
     }
     input{
         height: 24px;
-        border: 1px solid rgb(42, 204, 42);
+        border: 1px solid rgb(114, 166, 179);
         border-radius: 5px;
     }
     input[type=submit],
@@ -56,6 +56,6 @@ h1{
     input[type=file]:valid,
     input[type=url]:valid,
     input[type=tel]:valid{
-        background-color: rgb(14, 219, 14);
+        background-color: rgb(87, 170, 190);
         color: rgb(247, 239, 239);
     }
