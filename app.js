@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded",e=>{
             cantidad = document.querySelector("#txtAPP_estadistica").value,
             $res = document.querySelector("#lblRespuesta");
         let monedas={
-            'dolar':1,
-            'euro':0.92,
-            'quetzal':7.63,
-            'lempira':24.86,
-            'cordoba':34.20
+            'Media':1,
+            'Mediana':0.92,
+            'Moda':7.63,
+            'Desviacion Tipica':24.86,
+            'Desviacion Estandar':34.20
         };
         $res.innerHTML = `Respuesta: ${ monedas[a] / monedas[de] * cantidad }`;
     });
