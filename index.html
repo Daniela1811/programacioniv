@@ -1,41 +1,42 @@
 <body>
     <div class="container">
-        <form id="frmConversores" >
+        <form id="frmAPP_Estadistica" >
             <div class="row row-cols-2 p-2">
                 <div class="col text-center bg-info text-white">
-                    APP CONVERSORES
+                    APP Estadistica
                 </div>
             </div>
             <div class="row row-cols-4 p-2">
                 <div class="col">
                     DE: <select id="cboDe" class="form-control">
-                        <option value="dolar">Dolar</option>
-                        <option value="euro">Euros</option>
-                        <option value="quetzal">Quetzales</option>
-                        <option value="lempira">Lempira</option>
-                        <option value="cordoba">Cordoba</option>
+                        <option value="Media">Media</option>
+                        <option value="Mediana">Mediana</option>
+                        <option value="Moda">Moda</option>
+                        <option value="Desviacion Tipica">Desviacion Tipica</option>
+                        <option value="Desviacion Estandar">Desviacion Estandar</option>
+                    
                     </select>
                 </div>
                 <div class="col">
-                    A: <select id="cboA" class="form-control">
-                        <option value="dolar">Dolar</option>
-                        <option value="euro">Euros</option>
-                        <option value="quetzal">Quetzales</option>
-                        <option value="lempira">Lempira</option>
-                        <option value="cordoba">Cordoba</option>
+                    A: <select id="cboDe" class="form-control">
+                        <option value="Media">Media</option>
+                        <option value="Mediana">Mediana</option>
+                        <option value="Moda">Moda</option>
+                        <option value="Desviacion Tipica">Desviacion Tipica</option>
+                        <option value="Desviacion Estandar">Desviacion Estandar</option>
                     </select>
                 </div>
             </div>
             <div class="row row-cols-4 p-2">
                 <div class="col text-center">
-                    <input type="text" required="required" pattern="[0-9.]{1,}" placeholder="cantidad" id="txtCantidadConversores" class="form-control">
+                    <input type="text" required="required" pattern="[0-9.]{1,}" placeholder="cantidad" id="txtAPP_estadistica" class="form-control">
                 </div>
                 <div class="col text-center">
                     <p class="bg-success text-white" id="lblRespuesta">Respuesta: ?</p>
                 </div>
             </div>
             <div class="row row-cols-2">
-                <div class="col text-center"><input type="submit" id="btnConvertirMoneda" class="btn btn-primary"></div>
+                <div class="col text-center"><input type="submit" id="btnConvertir" class="btn btn-primary"></div>
             </div>
         </form>
     </div>

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded",e=>{
 
         let de = document.querySelector("#cboDe").value,
             a = document.querySelector("#cboA").value,
-            cantidad = document.querySelector("#txtCantidadConversores").value,
+            cantidad = document.querySelector("#txtAPP_estadistica").value,
             $res = document.querySelector("#lblRespuesta");
         let monedas={
             'dolar':1,
