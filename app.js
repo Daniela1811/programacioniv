@@ -12,15 +12,14 @@ document.addEventListener("DOMContentLoaded",e=>{
             'quetzal':7.63,
             'lempira':24.86,
             'cordoba':34.20,
-            
-            'Peso Mexicano':19.77,
-            'Yen Japones':106.60,
-            'Rupias Indias':73.59,
+            'Peso Mexicano':19.83,
+            'Yen Japones':106.54,
+            'Rupias Indias':73.62,
             'Bitcoin':0.00011,
             'Cedi':5.44,
             'Kina':3.40,
             'Balboa':1.00,
-            'Boliviano':6.90,
+            'Boliviano':6.90
 
 
         };
