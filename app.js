@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded",e=>{
             'quetzal':7.63,
             'lempira':24.86,
             'cordoba':34.20,
+            
+            'Peso Mexicano':19.77,
+            'Yen Japones':106.60,
+            'Rupias':73.59,
             'Bitcoin':0.00011,
             'Cedi':5.44,
             'Kina':3.40,
