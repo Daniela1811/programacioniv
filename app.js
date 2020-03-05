@@ -13,25 +13,51 @@ document.addEventListener("DOMContentLoaded", e=>{
             "euro":0.93,
             "quetzal":7.63,
             "lempira":24.9,
-            "cordoba":34.19},
+            "cordoba":34.19,
+            'Peso Mexicano':19.83,
+            'Yen Japones':106.54,
+            'Rupias Indias':73.62,
+            'Bitcoin':0.00011,
+            'Cedi':5.44,
+            'Kina':3.40,
+            'Balboa':1.00,
+            'Boliviano':6.90},
+
             peso = {
                 "gramo": 1000,
                 "kilogramo": 1,
                 "libra": 2.20462,
                 "onza": 35.274,
-                "tonelada": 0.01},
+                "tonelada": 0.001,
+                "Tonelada Corta":0.00110231,
+                "Tonelada Larga":0.000984207,
+                "Stone":0.157373,
+                "Miligramo":1e+6,
+                "Microgramo":1e+9
+                },
+
+
             almacenamiento = {
                 "bit": 8,
                 "byte": 1,
                 "kilobyte": 0.001,
                 "megabyte": 0.000001,
-                "gigabyte":0.000000001},
+                "gigabyte":0.000000001,
+            },
+
+
             longitudes = {
                 "milimetro": 1000,
                 "centimetro": 100,
                 "metro": 1,
                 "kilometro": 0.001,
-                "milla": 0.000621371};
+                "milla": 0.000621371,
+                "pulgada" : 39.3701 ,
+                "pastel" : 3.28084 ,
+                "varas" : 1.1963081929167 ,
+                "yardas" : 1.09361 ,
+
+            };
                
         let $res = document.querySelector("#lblRespuesta");
         if(opcion.value == "moneda"){
@@ -58,13 +84,13 @@ document.addEventListener("DOMContentLoaded", e=>{
     a1.innerHTML="";
   
     if(opcion.value == "moneda"){
-      var  array = ["dolar!Dolar","euro!Euro","quetzal!Quetzal","lempira!Lempira","cordoba!Cordoba"]; 
+      var  array = ["dolar!Dolar","euro!Euro","quetzal!Quetzal","lempira!Lempira","cordoba!Cordoba","Peso mexicano!Peso Mexicano","Yen Japones!Yen Japones","Rupias Indias!Rupias Indias","Bitcoin!Bitcoin","cedi!cedi","Kina!Kina","Balboa!Balboa","Boliviano!Boliviano"]; 
     } else if(opcion.value == "longitud"){
-      var array = ["milimetro!Milimetro","centimetro!Centimetro","metro!Metro","kilometro!Kilometro","milla!Milla"];
+      var array = ["milimetro!Milimetro","centimetro!Centimetro","metro!Metro","kilometro!Kilometro","milla!Milla","pulgada!pulgada","pastel!pastel","varas!varas","yardas!yardas"];
     } else if(opcion.value == "almacenamiento"){
       var array = ["bit!Bit","byte!Byte","kilobyte!Kilobyte","megabyte!Megabyte","gigabyte!Gigabyte"];
     } else if(opcion.value == "peso"){
-      var array = ["gramo!Gramo","kilogramo!Kilogramo","libra!Libra","onza!Onza","tonelada!Tonelada"];
+      var array = ["gramo!Gramo","kilogramo!Kilogramo","libra!Libra","onza!Onza","tonelada!Tonelada","Tonelada Corta!Tonelada Corta","Tonelada Larga!Tonelada Larga","Stone!Stone","Miligramo!Miligramo","Microgramo!Microgramo"];
     };
   
     for(var i=0;i<array.length;i++){ 
