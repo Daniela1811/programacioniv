@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded", e=>{
         let monedas = {
             "dolar":1,
             "colones":8.75,
-            "yenes":111.27,
-            "rupias":69.75,
-            "lempiras":24.36,
-            "peso":19.36,
-            "bitcoin":0.00026},
+            "yenes":106.31,
+            "rupias":73.85,
+            "lempiras":24.64,
+            "peso":19.95,
+            "bitcoin":0.00011},
             longitudes = {
               "metro":1,
               "cm": 100,
