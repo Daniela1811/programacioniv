@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded",e=>{
             
             'Peso Mexicano':19.77,
             'Yen Japones':106.60,
-            'Rupias':73.59,
+            'Rupias india':73.59,
             'Bitcoin':0.00011,
             'Cedi':5.44,
             'Kina':3.40,
