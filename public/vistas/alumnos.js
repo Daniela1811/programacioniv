@@ -3,7 +3,7 @@ var $ = el => document.querySelector(el),
 frmAlumnos.addEventListener("submit",e=>{
     e.preventDefault();
     e.stopPropagation();
-    
+
     let alumnos = {
         accion    : 'nuevo',
         codigo    : $("#txtCodigoAlumno").value,
