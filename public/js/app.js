@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", event => {
     });
 }); 
 
-// ESTA FUNCION HACE LA PETICION Y COLOCA LA VISTA SEGUN EL MODULO QUE SE LE HA SIFO ENVIADO
+// ESTA FUNCION HACE LA PETICION Y COLOCA LA VISTA SEGUN EL MODULO QUE SE LE HA SIDO ENVIADO
  function colocarVista(modulo){
 
     fetch(`public/vistas/${modulo}/${modulo}.html`).then( resp => resp.text()).then( resp => {
