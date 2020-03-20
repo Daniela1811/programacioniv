@@ -1,41 +1,23 @@
+
 var $ = el => document.querySelector(el);
-document.addEventListener("DOMContentLoaded", event => {
-   
-    let Alumnos = document.getElementById("alumnos"); // Instanciamos los elementos
-    let Docentes = document.getElementById("docentes"); //
-
-    //SE AGREGAN LOS EVENTOS LISTENER PARA CADA VISTA
-    Alumnos.addEventListener("click", e=>{
+document.addEventListener("DOMContentLoaded",event=>{
+    let mostrarVista = $("[class*='mostrar']");
+    mostrarVista.addEventListener('click',e=>{
         e.stopPropagation();
-        let modulo = "alumnos";
-        colocarVista(modulo);
 
-    });
+        let modulo = e.toElement.dataset.modulo;
+        fetch('public/vistas/alumnos/alumnos.html').then( resp=>resp.text() ).then(resp=>{
+            $(`#vistas-${modulo}`).innerHTML = resp;
 
-    Docentes.addEventListener("click", e=>{
-        e.stopPropagation();
-        let modulo = "docentes";
-        colocarVista(modulo);
-    
+            let btnCerrar = $(".close");
+            btnCerrar.addEventListener("click",event=>{
+                $(`#vistas-${modulo}`).innerHTML = "";
+            });
+
+            let cuerpo = $("body"),
+                script = document.createElement("script");
+            script.src = `public/vistas/${modulo}/${modulo}.js`;
+            cuerpo.appendChild(script);
+        });
     });
 }); 
-
-// ESTA FUNCION HACE LA PETICION Y COLOCA LA VISTA SEGUN EL MODULO QUE SE LE HA SIDO ENVIADO
- function colocarVista(modulo){
-
-    fetch(`public/vistas/${modulo}/${modulo}.html`).then( resp => resp.text()).then( resp => {
-
-        document.getElementById(`vistas-${modulo}`).innerHTML = resp;
-        let btnCerrar = $(".close");
-
-        btnCerrar.addEventListener("click", event => {
-            $(`#vistas-${modulo}`).innerHTML = "";
-        });
-
-        let cuerpo = $("body"), script = document.createElement("script");
-        script.src = `public/vistas/${modulo}/${modulo}.js`;
-        cuerpo.appendChild(script);
-            
-    });
-
- }
