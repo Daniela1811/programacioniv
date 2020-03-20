@@ -11,7 +11,7 @@ frmDocentes.addEventListener("submit",e=>{
         direccion_d : $("#txtDireccionDocente").value,
         telefono_d  : $("#txtTelefonoDocente").value
     };
-    fetch(`private/Modulos/docentes/procesos.php?proceso=recibirDatos&docente=${JSON.stringify(docentes)}`).then( resp=>resp.json() ).then(resp=>{
+    fetch(`private/Modulos/docentes/procesos.php?procesoD=recibirDatos&docente=${JSON.stringify(docentes)}`).then( resp=>resp.json() ).then(resp=>{
         $("#respuestaDocente").innerHTML = `
             <div class="alert alert-success" role="alert">
                 ${resp.msg}
