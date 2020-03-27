@@ -9,7 +9,8 @@ frmAlumnos.addEventListener("submit",e=>{
         codigo    : $("#txtCodigoAlumno").value,
         nombre    : $("#txtNombreAlumno").value,
         direccion : $("#txtDireccionAlumno").value,
-        telefono  : $("#txtTelefonoAlumno").value
+        telefono  : $("#txtTelefonoAlumno").value,
+        dui       : $("#txtDuiAlumno").value
     };
     fetch(`private/Modulos/alumnos/procesos.php?proceso=recibirDatos&alumno=${JSON.stringify(alumnos)}`).then( resp=>resp.json() ).then(resp=>{
         $("#respuestaAlumno").innerHTML = `

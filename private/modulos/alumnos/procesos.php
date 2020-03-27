@@ -36,11 +36,12 @@ class alumno{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO alumnos (codigo,nombre,direccion,telefono) VALUES(
+                    INSERT INTO alumnos (codigo,nombre,direccion,telefono,dui) VALUES(
                         "'. $this->datos['codigo'] .'",
                         "'. $this->datos['nombre'] .'",
                         "'. $this->datos['direccion'] .'",
-                        "'. $this->datos['telefono'] .'"
+                        "'. $this->datos['telefono'] .'",
+                        "'. $this->datos['dui'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
