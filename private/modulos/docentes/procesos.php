@@ -40,7 +40,8 @@ class docente{
                         "'. $this->datos['codigo'] .'",
                         "'. $this->datos['nombre'] .'",
                         "'. $this->datos['direccion'] .'",
-                        "'. $this->datos['telefono'] .'"
+                        "'. $this->datos['telefono'] .'",
+                        "'. $this->datos['dui'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente';

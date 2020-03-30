@@ -40,8 +40,7 @@ class alumno{
                         "'. $this->datos['codigo'] .'",
                         "'. $this->datos['nombre'] .'",
                         "'. $this->datos['direccion'] .'",
-                        "'. $this->datos['telefono'] .'",
-                        "'. $this->datos['dui'] .'"
+                        "'. $this->datos['telefono'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
