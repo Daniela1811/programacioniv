@@ -10,7 +10,7 @@ frmDocentes.addEventListener("submit",e=>{
         nombre    : $("#txtNombreDocente").value,
         direccion : $("#txtDireccionDocente").value,
         telefono  : $("#txtTelefonoDocente").value,
-        dui       : $("#txtDuiDocente").value
+        DUI       : $("#txtDUIDocente").value
     };
     fetch(`private/modulos/docentes/procesos.php?proceso=recibirDatos&docente=${JSON.stringify(docentes)}`).then( resp=>resp.json() ).then(resp=>{
         $("#respuestaDocente").innerHTML = `
