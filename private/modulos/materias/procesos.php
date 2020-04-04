@@ -60,7 +60,6 @@ class materia{
             select materias.idMateria, materias.codigo, materias.nombre, materia.descripcion
             from materias
             where materias.codigo like "%'. $valor .'%" or materias.nombre like "%'. $valor .'%"
-
         ');
         return $this->respuesta = $this->db->obtener_data();
     }

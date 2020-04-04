@@ -67,7 +67,6 @@ class docente{
             select docentes.idDocente, docentes.codigo, docentes.nombre, docentes.direccion, docentes.telefono, docentes.DUI
             from docentes
             where docentes.codigo like "%'. $valor .'%" or docentes.DUI like "%'. $valor .'%"
-
         ');
         return $this->respuesta = $this->db->obtener_data();
     }
