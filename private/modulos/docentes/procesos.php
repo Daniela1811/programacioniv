@@ -30,6 +30,9 @@ class docente{
         if( empty($this->datos['direccion']) ){
             $this->respuesta['msg'] = 'por favor ingrese la direccion del docente';
         }
+        if( empty($this->datos['DUI']) ){
+            $this->respuesta['msg'] = 'por favor ingrese el DUI del docente';
+        }
         $this->almacenar_docente();
     }
     private function almacenar_docente(){

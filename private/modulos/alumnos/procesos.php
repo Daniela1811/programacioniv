@@ -36,11 +36,11 @@ class alumno{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO alumnos (codigo,nombre,direccion,telefono) VALUES(
-                        "'. $this->datos['codigo'] .'",
-                        "'. $this->datos['nombre'] .'",
-                        "'. $this->datos['direccion'] .'",
-                        "'. $this->datos['telefono'] .'"
+                INSERT INTO alumnos (codigo,nombre,direccion,telefono) VALUES(
+                    "'. $this->datos['codigo'] .'",
+                    "'. $this->datos['nombre'] .'",
+                    "'. $this->datos['direccion'] .'",
+                    "'. $this->datos['telefono'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
@@ -62,7 +62,6 @@ class alumno{
             select alumnos.idAlumno, alumnos.codigo, alumnos.nombre, alumnos.direccion, alumnos.telefono
             from alumnos
             where alumnos.codigo like "%'. $valor .'%" or alumnos.nombre like "%'. $valor .'%"
-
         ');
         return $this->respuesta = $this->db->obtener_data();
     }
@@ -73,6 +72,8 @@ class alumno{
             WHERE alumnos.idAlumno="'.$idAlumno.'"
         ');
         return $this->respuesta['msg'] = 'Registro eliminado correctamente';;
-    }
-}
+            }
+        }
+    
+
 ?>

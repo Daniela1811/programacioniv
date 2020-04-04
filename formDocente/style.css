@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: boder-box;
+}
+body {
+    background-image: url('fondo.jpg');/*Imagen de fondo*/
+}
+/* BY Rosa Daniela Rogriguez Martinez USIS049518
+Kathia Marcela Berrios Ascencio USIS016718*/
+
+
+.from-register{
+    width: 400px;
+    background: #294561;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: ' Calibri';
+    color: royalblue;
+    box-shadow: 7px, 13px, 37px #0000;
+}
+.from-register h4{
+    font-size: 30px;/*Tamaño de las letras del titulo Formularios docentes*/
+    margin-bottom: 30px;
+}
+.controls{
+    width: 100%;
+    background: rgb(106, 204, 204);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    border: 2px solid #1f53c5;
+    font-family: 'Calibri';
+    font-size: 17px;
+    color: rgb(20, 19, 19); /*Cuando el docente Rellene los campos cambia el color de letra*/
+}
+.from-register p {
+    height: 40px;
+    text-align: center;/*Se usa para centrar el apartado Ya tengo cuenta*/
+    font-size: 17px;/*Tamaño de las letras Terminos y condisiones y ya tengo cuenta*/
+    line-height: 30px;
+
+}
+.from-register a:hover {
+    color: rgb(163, 238, 238);/*Al momento de seleccionar Terminos y condiciones cambio de color*/
+    text-decoration: underline;
+}
+.from-register .botons{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: rgb(157, 235, 235);
+    margin: 16px 0;
+    font-size: 16px;
+
+
+}
+
