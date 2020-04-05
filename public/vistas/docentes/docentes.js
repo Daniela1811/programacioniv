@@ -1,8 +1,8 @@
-var appdocentes = new Vue({
+var appdocente = new Vue({
     el:'#frm-docentes',
     data:{
-        docentes:{
-            idDocentes  : 0,
+        docente:{
+            idDocente  : 0,
             accion    : 'nuevo',
             codigo    : '',
             nombre    : '',
@@ -13,17 +13,17 @@ var appdocentes = new Vue({
         }
     },
     methods:{
-        guardarDocentes:function(){
-            fetch(`private/modulos/docentes/procesos.php?proceso=recibirDatos&docente=${JSON.stringify(this.docentes)}`).then( resp=>resp.json() ).then(resp=>{
-                this.docentes.msg = resp.msg;
-                this.docentes.idDocentes = 0;
-                this.docentes.codigo = '';
-                this.docentes.nombre = '';
-                this.docentes.direccion = '';
-                this.docentes.telefono = '';
-                this.docentes.DUI = '';
-                this.docentes.accion = 'nuevo';
-                appBuscarDocentes.buscarDocentes();
+        guardarDocente:function(){
+            fetch(`private/modulos/docentes/procesos.php?proceso=recibirDatos&docente=${JSON.stringify(this.docente)}`).then( resp=>resp.json() ).then(resp=>{
+                this.docente.msg = resp.msg;
+                this.docente.idAlumno = 0;
+                this.docente.codigo = '';
+                this.docente.nombre = '';
+                this.docente.direccion = '';
+                this.docente.telefono = '';
+                this.docente.DUI = '';
+                this.docente.accion = 'nuevo';
+                appBuscarDocentes.buscarDocente();
             });
         }
     }

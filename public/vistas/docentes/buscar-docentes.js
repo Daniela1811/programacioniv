@@ -5,22 +5,22 @@ var appBuscarDocentes = new Vue({
         valor:''
     },
     methods:{
-        buscarDocentes:function(){
-            fetch(`private/modulos/docentes/procesos.php?proceso=buscarDocentes&docentes=${this.valor}`).then(resp=>resp.json()).then(resp=>{
+        buscarDocente:function(){
+            fetch(`private/modulos/docentes/procesos.php?proceso=buscarDocente&docente=${this.valor}`).then(resp=>resp.json()).then(resp=>{
                 this.misdocentes = resp;
             });
         },
-        modificarDocentes:function(docentes){
-            appdocentes.docentes = docentes;
-            appdocentes.docentes.accion = 'modificar';
+        modificarDocente:function(docente){
+            appdocente.docente = docente;
+            appdocente.docente.accion = 'modificar';
         },
-        eliminarDocentes:function(idDocentes){
-            fetch(`private/modulos/docentes/procesos.php?proceso=eliminarDocentes&docentes=${idDocentes}`).then(resp=>resp.json()).then(resp=>{
-                this.buscarDocentes();
+        eliminarDocente:function(idDocente){
+            fetch(`private/modulos/docentes/procesos.php?proceso=eliminarDocente&docente=${idDocente}`).then(resp=>resp.json()).then(resp=>{
+                this.buscarDocente();
             });
         }
     },
     created:function(){
-        this.buscarDocentes();
+        this.buscarDocente();
     }
 });

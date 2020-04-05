@@ -1,23 +1,23 @@
 <?php 
 include('../../config/config.php');
-$docentes = new docentes($conexion);
+$docente = new docente($conexion);
 
 $proceso = '';
 if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
 	$proceso = $_GET['proceso'];
 }
-$docente->$proceso( $_GET['docentes'] );
-print_r(json_encode($docentes->respuesta));
+$docente->$proceso( $_GET['docente'] );
+print_r(json_encode($docente->respuesta));
 
-class docentes{
+class docente{
     private $datos = array(), $db;
     public $respuesta = ['msg'=>'correcto'];
     
     public function __construct($db){
         $this->db=$db;
     }
-    public function recibirDatos($docentes){
-        $this->datos = json_decode($docentes, true);
+    public function recibirDatos($docente){
+        $this->datos = json_decode($docente, true);
         $this->validar_datos();
     }
     private function validar_datos(){
@@ -33,9 +33,9 @@ class docentes{
         if( empty($this->datos['DUI']) ){
             $this->respuesta['msg'] = 'por favor ingrese el DUI del docente';
         }
-        $this->almacenar_docentes();
+        $this->almacenar_docente();
     }
-    private function almacenar_docentes(){
+    private function almacenar_docente(){
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
@@ -56,7 +56,7 @@ class docentes{
                         direccion  = "'. $this->datos['direccion'] .'",
                         telefono   = "'. $this->datos['telefono'] .'"
                         DUI        = "'. $this->datos['DUI'] .'"
-                    WHERE idDocentes = "'. $this->datos['idDocentes'] .'"
+                    WHERE idDocente = "'. $this->datos['idDocente'] .'"
                 ');
                 $this->respuesta['msg'] = 'Registro actualizado correctamente';
             }
@@ -64,17 +64,18 @@ class docentes{
     }
     public function buscarDocente($valor = ''){
         $this->db->consultas('
-            select docentes.idDocentes, docentes.codigo, docentes.nombre, docentes.direccion, docentes.telefono, docentes.DUI
+            select docentes.idDocente, docentes.codigo, docentes.nombre, docentes.direccion, docentes.telefono, docentes.DUI
             from docentes
             where docentes.codigo like "%'. $valor .'%" or docentes.DUI like "%'. $valor .'%"
+
         ');
         return $this->respuesta = $this->db->obtener_data();
     }
-    public function eliminarDocentes($idDocentes = 0){
+    public function eliminarDocente($idDocente = 0){
         $this->db->consultas('
             DELETE docentes
             FROM docentes
-            WHERE docentes.idDocentes="'.$idDocentes.'"
+            WHERE docentes.idDocente="'.$idDocente.'"
         ');
         return $this->respuesta['msg'] = 'Registro eliminado correctamente';;
     }

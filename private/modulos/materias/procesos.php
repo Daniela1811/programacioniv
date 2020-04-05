@@ -1,23 +1,23 @@
 <?php 
 include('../../config/config.php');
-$materias = new materias($conexion);
+$materia = new materia($conexion);
 
 $proceso = '';
 if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
 	$proceso = $_GET['proceso'];
 }
-$materia->$proceso( $_GET['materias'] );
-print_r(json_encode($materias->respuesta));
+$materia->$proceso( $_GET['materia'] );
+print_r(json_encode($materia->respuesta));
 
-class materias{
+class materia{
     private $datos = array(), $db;
     public $respuesta = ['msg'=>'correcto'];
     
     public function __construct($db){
         $this->db=$db;
     }
-    public function recibirDatos($materias){
-        $this->datos = json_decode($materias, true);
+    public function recibirDatos($materia){
+        $this->datos = json_decode($materia, true);
         $this->validar_datos();
     }
     private function validar_datos(){
@@ -30,9 +30,9 @@ class materias{
         if( empty($this->datos['descripcion']) ){
             $this->respuesta['msg'] = 'por favor ingrese la descripcion de la materia';
         }
-        $this->almacenar_materias();
+        $this->almacenar_materia();
     }
-    private function almacenar_materias(){
+    private function almacenar_materia(){
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
@@ -55,15 +55,16 @@ class materias{
             }
         }
     }
-    public function buscarMaterias($valor = ''){
+    public function buscarMateria($valor = ''){
         $this->db->consultas('
             select materias.idMateria, materias.codigo, materias.nombre, materia.descripcion
             from materias
             where materias.codigo like "%'. $valor .'%" or materias.nombre like "%'. $valor .'%"
+
         ');
         return $this->respuesta = $this->db->obtener_data();
     }
-    public function eliminarMaterias($idMaterias = 0){
+    public function eliminarMateria($idMateria = 0){
         $this->db->consultas('
             DELETE materias
             FROM materias
