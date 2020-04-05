@@ -1,23 +1,23 @@
 <?php 
 include('../../config/config.php');
-$materia = new materia($conexion);
+$materias = new materias($conexion);
 
 $proceso = '';
 if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
 	$proceso = $_GET['proceso'];
 }
-$materia->$proceso( $_GET['materia'] );
-print_r(json_encode($materia->respuesta));
+$materia->$proceso( $_GET['materias'] );
+print_r(json_encode($materias->respuesta));
 
-class materia{
+class materias{
     private $datos = array(), $db;
     public $respuesta = ['msg'=>'correcto'];
     
     public function __construct($db){
         $this->db=$db;
     }
-    public function recibirDatos($materia){
-        $this->datos = json_decode($materia, true);
+    public function recibirDatos($materias){
+        $this->datos = json_decode($materias, true);
         $this->validar_datos();
     }
     private function validar_datos(){
@@ -30,9 +30,9 @@ class materia{
         if( empty($this->datos['descripcion']) ){
             $this->respuesta['msg'] = 'por favor ingrese la descripcion de la materia';
         }
-        $this->almacenar_materia();
+        $this->almacenar_materias();
     }
-    private function almacenar_materia(){
+    private function almacenar_materias(){
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
@@ -55,7 +55,7 @@ class materia{
             }
         }
     }
-    public function buscarMateria($valor = ''){
+    public function buscarMaterias($valor = ''){
         $this->db->consultas('
             select materias.idMateria, materias.codigo, materias.nombre, materia.descripcion
             from materias
@@ -63,7 +63,7 @@ class materia{
         ');
         return $this->respuesta = $this->db->obtener_data();
     }
-    public function eliminarMateria($idMateria = 0){
+    public function eliminarMaterias($idMaterias = 0){
         $this->db->consultas('
             DELETE materias
             FROM materias

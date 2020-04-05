@@ -5,22 +5,22 @@ var appBuscarMaterias = new Vue({
         valor:''
     },
     methods:{
-        buscarMateria:function(){
-            fetch(`private/modulos/materias/procesos.php?proceso=buscarMateria&materia=${this.valor}`).then(resp=>resp.json()).then(resp=>{
+        buscarMaterias:function(){
+            fetch(`private/modulos/materias/procesos.php?proceso=buscarMaterias&materias=${this.valor}`).then(resp=>resp.json()).then(resp=>{
                 this.mismaterias = resp;
             });
         },
-        modificarMateria:function(materia){
-            appmateria.materia = materia;
-            appmateria.materia.accion = 'modificar';
+        modificarMaterias:function(materias){
+            appmaterias.materias = materias;
+            appmaterias.materias.accion = 'modificar';
         },
-        eliminarMateria:function(idMateria){
-            fetch(`private/modulos/materias/procesos.php?proceso=eliminarMateria&materia=${idMateria}`).then(resp=>resp.json()).then(resp=>{
-                this.buscarMateria();
+        eliminarMaterias:function(idMateria){
+            fetch(`private/modulos/materias/procesos.php?proceso=eliminarMaterias&materias=${idMateria}`).then(resp=>resp.json()).then(resp=>{
+                this.buscarMaterias();
             });
         }
     },
     created:function(){
-        this.buscarMateria();
+        this.buscarMaterias();
     }
 });
