@@ -55,16 +55,16 @@ class materia{
             }
         }
     }
-    public function buscarMateria($valor = ''){
+    public function buscarMaterias($valor = ''){
         $this->db->consultas('
             select materias.idMateria, materias.codigo, materias.nombre, materia.descripcion
             from materias
-            where materias.codigo like "%'. $valor .'%" or materias.nombre like "%'. $valor .'%"
+            where materias.codigo like "%'. $valor.'%" or materias.nombre like "%'. $valor .'%"
 
         ');
         return $this->respuesta = $this->db->obtener_data();
     }
-    public function eliminarMateria($idMateria = 0){
+    public function eliminarMaterias($idMateria = 0){
         $this->db->consultas('
             DELETE materias
             FROM materias
