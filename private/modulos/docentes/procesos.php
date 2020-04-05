@@ -56,7 +56,7 @@ class docente{
                         direccion  = "'. $this->datos['direccion'] .'",
                         telefono   = "'. $this->datos['telefono'] .'"
                         DUI        = "'. $this->datos['DUI'] .'"
-                    WHERE idDocente = "'. $this->datos['idDocente'] .'"
+                    WHERE idDocentes = "'. $this->datos['idDocentes'] .'"
                 ');
                 $this->respuesta['msg'] = 'Registro actualizado correctamente';
             }
@@ -64,18 +64,18 @@ class docente{
     }
     public function buscarDocente($valor = ''){
         $this->db->consultas('
-            select docentes.idDocente, docentes.codigo, docentes.nombre, docentes.direccion, docentes.telefono, docentes.DUI
+            select docentes.idDocentes, docentes.codigo, docentes.nombre, docentes.direccion, docentes.telefono, docentes.DUI
             from docentes
             where docentes.codigo like "%'. $valor .'%" or docentes.DUI like "%'. $valor .'%"
 
         ');
         return $this->respuesta = $this->db->obtener_data();
     }
-    public function eliminarDocente($idDocente = 0){
+    public function eliminarDocente($idDocentes = 0){
         $this->db->consultas('
             DELETE docentes
             FROM docentes
-            WHERE docentes.idDocente="'.$idDocente.'"
+            WHERE docentes.idDocentes="'.$idDocentes.'"
         ');
         return $this->respuesta['msg'] = 'Registro eliminado correctamente';;
     }
