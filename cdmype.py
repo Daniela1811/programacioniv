@@ -3,7 +3,7 @@ from facebook_scraper import get_posts
 import csv
 
 face = csv.writer(open('cdmype.csv','w'))
-face.writerow(['POST_ID','TEXTO','LIKES'])
+face.writerow(['POST_ID','TEXTO','LIKES','comments'])
 
 for post in get_posts('cdmypeugbusulutan ', pages=10, ):
     #print(post.keys())
