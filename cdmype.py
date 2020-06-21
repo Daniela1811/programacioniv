@@ -1,4 +1,4 @@
-#UNIVO
+#Cdmype
 from facebook_scraper import get_posts
 import csv
 
@@ -7,9 +7,9 @@ face.writerow(['POST_ID','TEXTO','LIKES'])
 
 for post in get_posts('cdmypeugbusulutan ', pages=10, ):
     #print(post.keys())
-    print(post['post_id'], post['text'], post['likes'], sep=' - ')
+    print(post['post_id'], post['text'],post['Likes'], post['comments'], sep=' - ')
     try:
-        face.writerow([post['post_id'], post['text'], post['comments'], post['likes']])
+        face.writerow([post['post_id'], post['text'], post['Likes'], post['comments']])
     except:
         None
         
